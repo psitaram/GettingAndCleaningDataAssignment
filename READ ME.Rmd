@@ -1,0 +1,15 @@
+## Getting and Cleaning Data Course Project
+
+### The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set.
+
+Data for the project can be accessed via this link : https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+Description of the data can be obtained here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+### Files submitted for the assignment:
+
+1. Codebook.md containing descriptions of the variables and the work performed to clean up the data.
+
+2. run_analysis.R containing the script for tidying the dataset.
+
+3. SecondData.txt which contains the final tidy dataset.

@@ -1,0 +1,147 @@
+The run_analysis.R script follows the instructions provided for the assignment to tidy the UCI HAR dataset.
+
+### Step 1: Download the dataset and assign each data to variables
+
+The dataset was downloaded and extracted under the folder called UCI HAR Dataset
+
+features <- features.txt 
+
+activities <- activity_labels.txt 
+
+subject_test <- test/subject_test.txt 
+
+x_test <- test/X_test.txt
+
+y_test <- test/y_test.txt 
+
+subject_train <- test/subject_train.txt 
+
+x_train <- test/X_train.txt 
+
+y_train <- test/y_train.txt 
+
+### Step 2: Merge the training and the test sets to create one data set
+
+x_train and x_test merged into X_Data (10299 rows, 561 columns) 
+
+y_train and y_test merged into Y_Data (10299 rows, 1 column)
+
+subject_train and subject_test merged into All_Subjects (10299 rows, 1 column) 
+
+All_Subjects, X_Data and Y_Data were merged into All_Data (10299 rows, 563 column) 
+
+
+### Step 3: Tidy data generated with only mean and standard deviations, with descriptive variable names and activities
+
+Data is named MeanSD (10299 rows, 88 columns)
+
+Actiities:
+
+WALKING
+
+WALKING_UPSTAIRS
+
+WALKING_DOWNSTAIRS
+
+SITTING
+
+STANDING
+
+LAYING
+
+Variable names:
+
+ [1] "subject"                                           
+ [2] "activity"                                          
+ [3] "TimeBodyAccelerometer.mean...X"                    
+ [4] "TimeBodyAccelerometer.mean...Y"                    
+ [5] "TimeBodyAccelerometer.mean...Z"                    
+ [6] "TimeGravityAccelerometer.mean...X"                 
+ [7] "TimeGravityAccelerometer.mean...Y"                 
+ [8] "TimeGravityAccelerometer.mean...Z"                 
+ [9] "TimeBodyAccelerometerJerk.mean...X"                
+[10] "TimeBodyAccelerometerJerk.mean...Y"                
+[11] "TimeBodyAccelerometerJerk.mean...Z"                
+[12] "TimeBodyGyroscope.mean...X"                        
+[13] "TimeBodyGyroscope.mean...Y"                        
+[14] "TimeBodyGyroscope.mean...Z"                        
+[15] "TimeBodyGyroscopeJerk.mean...X"                    
+[16] "TimeBodyGyroscopeJerk.mean...Y"                    
+[17] "TimeBodyGyroscopeJerk.mean...Z"                    
+[18] "TimeBodyAccelerometerMagnitude.mean.."             
+[19] "TimeGravityAccelerometerMagnitude.mean.."          
+[20] "TimeBodyAccelerometerJerkMagnitude.mean.."         
+[21] "TimeBodyGyroscopeMagnitude.mean.."                 
+[22] "TimeBodyGyroscopeJerkMagnitude.mean.."             
+[23] "FrequencyBodyAccelerometer.mean...X"               
+[24] "FrequencyBodyAccelerometer.mean...Y"               
+[25] "FrequencyBodyAccelerometer.mean...Z"               
+[26] "FrequencyBodyAccelerometer.meanFreq...X"           
+[27] "FrequencyBodyAccelerometer.meanFreq...Y"           
+[28] "FrequencyBodyAccelerometer.meanFreq...Z"           
+[29] "FrequencyBodyAccelerometerJerk.mean...X"           
+[30] "FrequencyBodyAccelerometerJerk.mean...Y"           
+[31] "FrequencyBodyAccelerometerJerk.mean...Z"           
+[32] "FrequencyBodyAccelerometerJerk.meanFreq...X"       
+[33] "FrequencyBodyAccelerometerJerk.meanFreq...Y"       
+[34] "FrequencyBodyAccelerometerJerk.meanFreq...Z"       
+[35] "FrequencyBodyGyroscope.mean...X"                   
+[36] "FrequencyBodyGyroscope.mean...Y"                   
+[37] "FrequencyBodyGyroscope.mean...Z"                   
+[38] "FrequencyBodyGyroscope.meanFreq...X"               
+[39] "FrequencyBodyGyroscope.meanFreq...Y"               
+[40] "FrequencyBodyGyroscope.meanFreq...Z"               
+[41] "FrequencyBodyAccelerometerMagnitude.mean.."        
+[42] "FrequencyBodyAccelerometerMagnitude.meanFreq.."    
+[43] "FrequencyBodyAccelerometerJerkMagnitude.mean.."    
+[44] "FrequencyBodyAccelerometerJerkMagnitude.meanFreq.."
+[45] "FrequencyBodyGyroscopeMagnitude.mean.."            
+[46] "FrequencyBodyGyroscopeMagnitude.meanFreq.."        
+[47] "FrequencyBodyGyroscopeJerkMagnitude.mean.."        
+[48] "FrequencyBodyGyroscopeJerkMagnitude.meanFreq.."    
+[49] "Angle.tBodyAccelerometerMean.Gravity."             
+[50] "Angle.tBodyAccelerometerJerkMean..GravityMean."    
+[51] "Angle.tBodyGyroscopeMean.GravityMean."             
+[52] "Angle.tBodyGyroscopeJerkMean.GravityMean."         
+[53] "Angle.X.GravityMean."                              
+[54] "Angle.Y.GravityMean."                              
+[55] "Angle.Z.GravityMean."                              
+[56] "TimeBodyAccelerometer.std...X"                     
+[57] "TimeBodyAccelerometer.std...Y"                     
+[58] "TimeBodyAccelerometer.std...Z"                     
+[59] "TimeGravityAccelerometer.std...X"                  
+[60] "TimeGravityAccelerometer.std...Y"                  
+[61] "TimeGravityAccelerometer.std...Z"                  
+[62] "TimeBodyAccelerometerJerk.std...X"                 
+[63] "TimeBodyAccelerometerJerk.std...Y"                 
+[64] "TimeBodyAccelerometerJerk.std...Z"                 
+[65] "TimeBodyGyroscope.std...X"                         
+[66] "TimeBodyGyroscope.std...Y"                         
+[67] "TimeBodyGyroscope.std...Z"                         
+[68] "TimeBodyGyroscopeJerk.std...X"                     
+[69] "TimeBodyGyroscopeJerk.std...Y"                     
+[70] "TimeBodyGyroscopeJerk.std...Z"                     
+[71] "TimeBodyAccelerometerMagnitude.std.."              
+[72] "TimeGravityAccelerometerMagnitude.std.."           
+[73] "TimeBodyAccelerometerJerkMagnitude.std.."          
+[74] "TimeBodyGyroscopeMagnitude.std.."                  
+[75] "TimeBodyGyroscopeJerkMagnitude.std.."              
+[76] "FrequencyBodyAccelerometer.std...X"                
+[77] "FrequencyBodyAccelerometer.std...Y"                
+[78] "FrequencyBodyAccelerometer.std...Z"                
+[79] "FrequencyBodyAccelerometerJerk.std...X"            
+[80] "FrequencyBodyAccelerometerJerk.std...Y"            
+[81] "FrequencyBodyAccelerometerJerk.std...Z"            
+[82] "FrequencyBodyGyroscope.std...X"                    
+[83] "FrequencyBodyGyroscope.std...Y"                    
+[84] "FrequencyBodyGyroscope.std...Z"                    
+[85] "FrequencyBodyAccelerometerMagnitude.std.."         
+[86] "FrequencyBodyAccelerometerJerkMagnitude.std.."     
+[87] "FrequencyBodyGyroscopeMagnitude.std.."             
+[88] "FrequencyBodyGyroscopeJerkMagnitude.std.." 
+
+### Step 4: A second tidy dataset was generated with with the average of each variable for each activity and each subject.
+
+Data is named SecondData (180 rows, 88 columns)
+
+
